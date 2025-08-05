@@ -1,26 +1,32 @@
-
-/*
-* This is the main entry point for the program. It will parse the input for you.
-* You don't need to change this.
-*/
-function main() {
-    const input = process.argv.slice(2)
-    if (input.length === 0) {
-        throw new Error("no command line arguments passed")
-    }
-    var output = handle(input[0])
-    console.log(output)
-}
-
-
-/*
- * Use this method to write your solution. 
- * Make sure to print out the solution.
+/**
+ *
+ * @param {any[]} arr - a sequence of elements (can be integers, strings, or other types)
+ * @param {any} n - a number or a target element (based on problem context)
+ * @returns {} - the output based on the problem logic
+ *
+ * This function will be called by our system.
+ * So fill in your code inside this function.
+ *
  */
-function handle(input) {
-    //TODO: implement the logic to handle each input and return the finall output at the end of the function.
-    return input
+function handle(arr, n) {
+  // WRITE YOUR CODE HERE....
+  return arr; // Modify this return based on your problem's requirements.
 }
 
+/*
+ * **************************************************************************************
+ *                          DO NOT EDIT THE CODE BELOW.
+ * ***************************************************************************************
+ * This code is used to boostrap your solution to be checked for correctness by our system.
+ */
+function main() {
+  const input = process.argv.slice(2);
+  const [arrStr, nStr] = input[0].split(" | ");
+  const arr = arrStr.split(", ").map((num) => parseInt(num.trim()));
+  const n = parseInt(nStr.trim());
 
-main()
+  const output = handle(arr, n);
+  console.log(JSON.stringify(output));
+}
+
+main();
